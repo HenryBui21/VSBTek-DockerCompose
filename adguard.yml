@@ -1,12 +1,12 @@
 services:
   adguard:
     image: adguard/adguardhome
-    container_name: AdGuard
+    container_name: adguard
     mem_limit: 2g
     cpu_shares: 768
     security_opt:
       - no-new-privileges:true
-    restart: on-failure:5
+    restart: always
     network_mode: host
     volumes:
       - adguard_config:/opt/adguardhome/conf:rw
